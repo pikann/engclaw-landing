@@ -1,0 +1,25 @@
+# Engclaw
+
+> Engclaw is a free, open-source desktop app (macOS, Windows, Linux) for practising English pronunciation. It scores a spoken sentence phone by phone against a reference, shows which sounds, words and intonation to fix, and runs entirely on the user's computer with no account, server or telemetry.
+
+Key facts:
+- License: GPL-3.0-or-later. Price: free.
+- Platforms: macOS Apple Silicon (.dmg), Windows x64 (.exe), Linux x64 (AppImage, .deb). Intel Macs are not supported.
+- Score out of 100 = 30% acoustic similarity (dynamic time warping against a Kokoro reference voice) + 40% correct sounds (phoneme error rate) + 30% correct words (word error rate).
+- Local models (Apache-2.0, downloaded once from Hugging Face, ~2.6 GB total): wav2vec2-lv-60-espeak-cv-ft (phone recognition), wav2vec2-large-960h (speech recognition), Kokoro-82M (reference voice).
+- Features: Practice, Shadowing (YouTube + dictation), Pronunciation game, Dictionary (IPA, roots, animated mouth and tongue), optional Converse AI speaking partner.
+- Scoring is English only; the interface is English and Vietnamese.
+- Privacy: recordings, history and settings stay in the local app data folder. Network is used only for model download, YouTube, word illustrations, update checks and a user-configured AI provider.
+
+## Pages
+- [Engclaw landing page](https://pikann.github.io/engclaw/): overview, features, how scoring works, FAQ and downloads.
+
+## Source and docs
+- [GitHub repository and README](https://github.com/pikann/engclaw): full description, requirements and limitations.
+- [Latest releases and checksums](https://github.com/pikann/engclaw/releases/latest)
+- [User guide](https://github.com/pikann/engclaw/blob/main/docs/user-guide.md)
+- [Architecture overview](https://github.com/pikann/engclaw/blob/main/docs/architecture.md)
+
+## Optional
+- [Discussions](https://github.com/pikann/engclaw/discussions)
+- [Security policy](https://github.com/pikann/engclaw/blob/main/SECURITY.md)
