@@ -1,0 +1,73 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Engclaw social preview</title>
+<style>
+@font-face{font-family:"Bricolage Grotesque";src:url(fonts/bricolage-latin.woff2);font-weight:200 800}
+@font-face{font-family:"Inter";src:url(fonts/inter-latin.woff2);font-weight:100 900}
+*{box-sizing:border-box;margin:0}
+body{width:1280px;height:640px;overflow:hidden;font-family:Inter,sans-serif;color:#fff;
+ background:radial-gradient(700px 500px at 88% 12%,rgba(67,224,198,.22),transparent 70%),
+            radial-gradient(600px 500px at 0% 110%,rgba(0,122,123,.55),transparent 70%),#0a1f20;position:relative}
+.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:40px 40px;
+ -webkit-mask-image:linear-gradient(90deg,transparent 30%,#000 100%)}
+.left{position:absolute;left:72px;top:0;bottom:0;width:640px;display:flex;flex-direction:column;justify-content:center}
+.brand{display:flex;align-items:center;gap:20px;margin-bottom:34px}
+.brand svg{width:84px;height:84px}
+.brand span{font:800 64px/1 "Bricolage Grotesque";letter-spacing:-1.5px}
+h1{font:700 46px/1.1 "Bricolage Grotesque";letter-spacing:-1px;margin-bottom:26px}
+h1 em{font-style:normal;color:#43e0c6}
+p{font-size:23px;line-height:1.45;color:#c7d3d2;max-width:560px}
+.tags{display:flex;gap:12px;margin-top:34px}
+.tags b{font:600 17px Inter;padding:9px 16px;border-radius:99px;border:1.5px solid rgba(67,224,198,.45);color:#43e0c6;background:rgba(67,224,198,.08)}
+.card{position:absolute;right:64px;top:92px;width:430px;background:#f7f4ed;color:#0a1f20;border-radius:26px;padding:30px;
+ box-shadow:0 40px 80px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.4);transform:rotate(2deg)}
+.lbl{font:600 13px Inter;letter-spacing:.12em;text-transform:uppercase;color:#55696a}
+.top{display:flex;align-items:center;justify-content:space-between;margin:10px 0 22px}
+.sent{font:700 34px/1.15 "Bricolage Grotesque"}
+.sent .bad{color:#c23a1e;text-decoration:underline wavy #c23a1e;text-underline-offset:7px}
+.ring{position:relative;width:104px;height:104px;border-radius:50%;flex:none;margin-left:14px;
+ background:conic-gradient(#007a7b 0 78%,#dfe8e6 0)}
+.ring::before{content:"";position:absolute;inset:11px;border-radius:50%;background:#f7f4ed}
+.ring i{position:absolute;inset:0;display:grid;place-items:center;font:800 34px "Bricolage Grotesque";font-style:normal;color:#035556}
+.ph{display:flex;gap:9px;flex-wrap:wrap;margin:18px 0 22px}
+.ph span{font:600 21px Inter;padding:9px 15px;border-radius:12px;background:#e3ecea;color:#035556}
+.ph span.x{background:#ffd9d1;color:#c23a1e}
+.bar{height:46px;border-radius:14px;background:#0a1f20;display:flex;align-items:center;gap:14px;padding:0 16px;color:#43e0c6;font:600 16px Inter}
+.wave{display:flex;align-items:center;gap:3px;flex:1;height:26px}
+.wave u{display:block;width:4px;border-radius:2px;background:#43e0c6}
+</style></head><body>
+<div class="grid"></div>
+<div class="left">
+ <div class="brand">
+  <svg viewBox="96 96 832 832"><rect x="96" y="96" width="832" height="832" rx="186" fill="#007A7B"/>
+   <g fill="#fff" transform="translate(221.5 280) scale(1.73)">
+    <path d="M155 127.497C155 136.333 147.837 143.497 139 143.497C130.163 143.497 123 136.333 123 127.497C123 118.66 130.163 111.497 139 111.497C147.837 111.497 155 118.66 155 127.497Z"/>
+    <path d="M161.5 193.497V267.497C129.167 248.83 63.5 210.997 60 208.997C56.6832 207.101 55.5 203.497 55.5 200.997V183.497C55.5 179.097 58.5 175.506 60 174.497C68.6667 168.663 87.1 156.297 91.5 153.497C95.9 150.697 100.63 152.414 102.5 153.497C118.333 162.663 151.275 181.15 155.5 183.497C160 185.997 161.5 190.997 161.5 193.497Z"/>
+    <path d="M57 81.9968V104.497L102.5 72.9968C109 67.9968 115.5 68.9968 113.5 82.9968C110.089 106.874 94 129.32 83.5 136.497C70.3333 145.497 42.8 164.297 38 167.497C33.2 170.697 28.5 169.413 26 167.997C21 165.163 9.5 159.497 5.5 153.497C1.88805 148.079 0 144.997 0 138.997V85.9968C0 75.5968 9.5 64.757 15 60.9968C31.3333 49.8301 65.4 26.5968 71 22.9968C78 18.4968 88.2143 17.9968 90 20.4968C92 23.2968 90.8333 26.3301 90 27.4968C79.3333 43.8301 57.9 76.7968 57.5 77.9968C57.1 79.1968 57 81.1635 57 81.9968Z"/>
+    <path d="M180.5 127.994C180.5 136.83 187.663 143.994 196.5 143.994C205.337 143.994 212.5 136.83 212.5 127.994C212.5 119.157 205.337 111.994 196.5 111.994C187.663 111.994 180.5 119.157 180.5 127.994Z"/>
+    <path d="M174 193.994V267.994C206.333 249.327 272 211.494 275.5 209.494C278.817 207.598 280 203.994 280 201.494V183.994C280 179.594 277 176.003 275.5 174.994C266.833 169.16 248.4 156.794 244 153.994C239.6 151.194 234.87 152.911 233 153.994C217.167 163.16 184.225 181.646 180 183.994C175.5 186.494 174 191.494 174 193.994Z"/>
+    <path d="M278.5 82.4936V104.994L233 73.4936C226.5 68.4936 220 69.4936 222 83.4936C225.411 107.371 241.5 129.816 252 136.994C265.167 145.994 292.7 164.794 297.5 167.994C302.3 171.194 307 169.91 309.5 168.494C314.5 165.66 326 159.994 330 153.994C333.612 148.576 335.5 145.494 335.5 139.494V86.4936C335.5 76.0936 326 65.2538 320.5 61.4936C304.167 50.3269 270.1 27.0936 264.5 23.4936C257.5 18.9936 247.286 18.4936 245.5 20.9936C243.5 23.7936 244.667 26.8269 245.5 27.9936C256.167 44.3269 277.6 77.2936 278 78.4936C278.4 79.6936 278.5 81.6603 278.5 82.4936Z"/>
+    <path d="M161.5 9C165.7 -3 170.3 -3 174.5 9C179.75 24 183 27.25 198 32.5C210 36.7 210 41.3 198 45.5C183 50.75 179.75 54 174.5 69C170.3 81 165.7 81 161.5 69C156.25 54 153 50.75 138 45.5C126 41.3 126 36.7 138 32.5C153 27.25 156.25 24 161.5 9Z"/>
+   </g></svg>
+  <span>Engclaw</span>
+ </div>
+ <h1>Practice English<br>pronunciation,<br><em>phone by phone.</em></h1>
+ <p>Score what you say, shadow YouTube videos, and see exactly which sounds to fix.</p>
+ <div class="tags"><b>Free</b><b>Open source</b><b>Runs on your computer</b></div>
+</div>
+<div class="card">
+ <div class="lbl">Practice · Score</div>
+ <div class="top">
+  <div class="sent"><span class="bad">Hello</span>, I am a developer</div>
+  <div class="ring"><i>78</i></div>
+ </div>
+ <div class="lbl" style="text-transform:none;letter-spacing:.04em;font-size:15px">/həˈloʊ/ · phone by phone</div>
+ <div class="ph"><span class="x">h</span><span>ə</span><span class="x">l</span><span>oʊ</span><span>aɪ</span><span>æm</span></div>
+ <div class="bar">▶ Hear it
+  <div class="wave" id="w"></div>
+ </div>
+</div>
+<script>
+const w=document.getElementById('w');
+for(let i=0;i<34;i++){const u=document.createElement('u');u.style.height=(6+Math.abs(Math.sin(i*.7)*Math.cos(i*.23))*20)+'px';w.appendChild(u)}
+</script>
+</body></html>
