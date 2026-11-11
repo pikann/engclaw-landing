@@ -12,7 +12,7 @@ Key facts:
 - Privacy: recordings, history and settings stay in the local app data folder. Network is used only for model download, YouTube, word illustrations, update checks and a user-configured AI provider.
 
 ## Pages
-- [Engclaw landing page](https://pikann.github.io/engclaw/): overview, features, how scoring works, FAQ and downloads.
+- [Engclaw landing page](https://engclaw.org/): overview, features, how scoring works, FAQ and downloads.
 
 ## Source and docs
 - [GitHub repository and README](https://github.com/pikann/engclaw): full description, requirements and limitations.

@@ -24,4 +24,4 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://pikann.github.io/engclaw/sitemap.xml
+Sitemap: https://engclaw.org/sitemap.xml
