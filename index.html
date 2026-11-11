@@ -12,20 +12,24 @@
   <!-- TODO: replace with the final production URL -->
   <link rel="canonical" href="https://pikann.github.io/engclaw/">
 
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="assets/icon.png">
+  <!-- Favicons: Google needs a square icon, a multiple of 48px, at a stable crawlable URL -->
+  <link rel="icon" href="favicon.ico" sizes="48x48">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" sizes="any">
+  <link rel="icon" href="assets/favicon-96.png" type="image/png" sizes="96x96">
+  <link rel="icon" href="assets/favicon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Engclaw">
   <meta property="og:title" content="Engclaw – Free, Open-Source English Pronunciation Practice">
   <meta property="og:description" content="Phone-by-phone pronunciation scoring that runs on your computer. Free, open source, no account, no telemetry.">
   <meta property="og:url" content="https://pikann.github.io/engclaw/">
-  <meta property="og:image" content="https://pikann.github.io/engclaw/assets/icon.png">
+  <meta property="og:image" content="https://pikann.github.io/engclaw/assets/favicon-512.png">
   <meta property="og:image:alt" content="Engclaw logo">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Engclaw – Free English Pronunciation Practice">
   <meta name="twitter:description" content="Phone-by-phone pronunciation scoring that runs on your computer. Free and open source.">
-  <meta name="twitter:image" content="https://pikann.github.io/engclaw/assets/icon.png">
+  <meta name="twitter:image" content="https://pikann.github.io/engclaw/assets/favicon-512.png">
 
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link rel="preload" href="assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -39,7 +43,21 @@
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "WebSite",
+        "name": "Engclaw",
+        "alternateName": ["Engclaw English Pronunciation"],
+        "url": "https://pikann.github.io/engclaw/"
+      },
+      {
+        "@type": "Organization",
+        "name": "Engclaw",
+        "url": "https://pikann.github.io/engclaw/",
+        "logo": "https://pikann.github.io/engclaw/assets/favicon-512.png",
+        "sameAs": ["https://github.com/pikann/engclaw"]
+      },
+      {
         "@type": "SoftwareApplication",
+        "image": "https://pikann.github.io/engclaw/assets/favicon-512.png",
         "name": "Engclaw",
         "applicationCategory": "EducationalApplication",
         "operatingSystem": "macOS (Apple Silicon), Windows x64, Linux x64",
