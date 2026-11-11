@@ -89,11 +89,16 @@
     });
 
     // Section heading reveals
-    gsap.utils.toArray('.section-head > *, .privacy__grid > div:first-child > *, .reqs h2, .faq h2').forEach((el) => {
+    gsap.utils.toArray('.section-head > *, .privacy__grid > div:first-child > *, .reqs h2, .faq h2, .start h2, .about__grid > div:first-child > *, .models > *').forEach((el) => {
       gsap.from(el, {
         y: 40, opacity: 0, duration: 0.9, ease: 'power3.out',
         scrollTrigger: { trigger: el, start: 'top 88%' },
       });
+    });
+
+    gsap.from('.facts > div, .start__list li', {
+      y: 30, opacity: 0, duration: 0.7, stagger: 0.08, ease: 'power3.out',
+      scrollTrigger: { trigger: '.facts, .start__list', start: 'top 88%' },
     });
 
     // How-it-works steps

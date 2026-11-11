@@ -40,72 +40,189 @@
 
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebSite",
-        "name": "Engclaw",
-        "alternateName": ["Engclaw English Pronunciation"],
-        "url": "https://pikann.github.io/engclaw/"
-      },
-      {
-        "@type": "Organization",
-        "name": "Engclaw",
-        "url": "https://pikann.github.io/engclaw/",
-        "logo": "https://pikann.github.io/engclaw/assets/favicon-512.png",
-        "sameAs": ["https://github.com/pikann/engclaw"]
-      },
-      {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "Engclaw",
+      "alternateName": [
+        "Engclaw English Pronunciation"
+      ],
+      "url": "https://pikann.github.io/engclaw/"
+    },
+    {
+      "@type": "Organization",
+      "name": "Engclaw",
+      "url": "https://pikann.github.io/engclaw/",
+      "logo": "https://pikann.github.io/engclaw/assets/favicon-512.png",
+      "sameAs": [
+        "https://github.com/pikann/engclaw"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://pikann.github.io/engclaw/#webpage",
+      "url": "https://pikann.github.io/engclaw/",
+      "name": "Engclaw – Free, Open-Source English Pronunciation Practice App",
+      "dateModified": "2026-11-12",
+      "inLanguage": "en",
+      "about": {
         "@type": "SoftwareApplication",
-        "image": "https://pikann.github.io/engclaw/assets/favicon-512.png",
-        "name": "Engclaw",
-        "applicationCategory": "EducationalApplication",
-        "operatingSystem": "macOS (Apple Silicon), Windows x64, Linux x64",
-        "description": "Open-source desktop app that scores English pronunciation phone by phone, with shadowing, a pronunciation game and a dictionary. Runs fully on your machine.",
-        "license": "https://www.gnu.org/licenses/gpl-3.0.html",
-        "isAccessibleForFree": true,
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-        "downloadUrl": "https://github.com/pikann/engclaw/releases/latest",
-        "codeRepository": "https://github.com/pikann/engclaw",
-        "inLanguage": ["en", "vi"]
+        "name": "Engclaw"
       },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Is Engclaw really free?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Engclaw is free and open source under GPL-3.0-or-later. There is no account, subscription or telemetry." }
-          },
-          {
-            "@type": "Question",
-            "name": "Does my voice leave my computer?",
-            "acceptedAnswer": { "@type": "Answer", "text": "No. Scoring runs locally with speech models downloaded once from Hugging Face. Recordings, history and settings stay in your app data folder. Network requests only happen for features you choose to use." }
-          },
-          {
-            "@type": "Question",
-            "name": "How is the pronunciation score calculated?",
-            "acceptedAnswer": { "@type": "Answer", "text": "The final score out of 100 blends 30% acoustic similarity to a reference voice, 40% correct sounds (phoneme error rate) and 30% correct words (word error rate)." }
-          },
-          {
-            "@type": "Question",
-            "name": "Which platforms are supported?",
-            "acceptedAnswer": { "@type": "Answer", "text": "macOS on Apple Silicon, Windows x64, and Linux x64 as AppImage or .deb. Intel Macs are not supported." }
-          },
-          {
-            "@type": "Question",
-            "name": "How much disk space and memory do I need?",
-            "acceptedAnswer": { "@type": "Answer", "text": "About 2.6 GB of disk space for the speech models plus the app itself. 8 GB of RAM is a practical starting point." }
-          },
-          {
-            "@type": "Question",
-            "name": "Does it work offline?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes, after the models are installed. Practice and the game work offline. YouTube shadowing, word illustrations, updates and the optional AI agent need a network connection." }
-          }
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [
+          "#about-title",
+          "#about .lead"
         ]
       }
-    ]
-  }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "image": "https://pikann.github.io/engclaw/assets/favicon-512.png",
+      "name": "Engclaw",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "macOS (Apple Silicon), Windows x64, Linux x64",
+      "description": "Open-source desktop app that scores English pronunciation phone by phone, with shadowing, a pronunciation game and a dictionary. Runs fully on your machine.",
+      "license": "https://www.gnu.org/licenses/gpl-3.0.html",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "downloadUrl": "https://github.com/pikann/engclaw/releases/latest",
+      "codeRepository": "https://github.com/pikann/engclaw",
+      "inLanguage": [
+        "en",
+        "vi"
+      ],
+      "featureList": [
+        "Phone-by-phone pronunciation scoring",
+        "Shadowing with YouTube videos and dictation",
+        "Pronunciation game with chapters and stars",
+        "Dictionary with IPA, roots and animated mouth and tongue",
+        "Optional AI speaking partner (Converse)",
+        "Runs fully on-device"
+      ],
+      "screenshot": "https://pikann.github.io/engclaw/assets/media/practice.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "Engclaw",
+        "url": "https://github.com/pikann"
+      },
+      "dateModified": "2026-11-12",
+      "url": "https://pikann.github.io/engclaw/"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Engclaw?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Engclaw is a free, open-source desktop app for macOS, Windows and Linux that scores English pronunciation phone by phone and shows which sounds, words and intonation to fix. It runs speech models locally with no account, server or telemetry."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which AI models does Engclaw use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Three local models: wav2vec2-lv-60-espeak-cv-ft for phone recognition, wav2vec2-large-960h for speech recognition, and Kokoro-82M for the reference voice. All are Apache-2.0 licensed and downloaded once from Hugging Face."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I practise with YouTube videos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Shadowing mode lets you paste a YouTube link, repeat each line of the transcript and get scored, or switch to dictation. Fetching YouTube captions and audio may be against YouTube's Terms of Service, so it is intended for personal, educational use."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Engclaw support languages other than English?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pronunciation scoring is English only. The app interface is available in English and Vietnamese."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Engclaw really free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Engclaw is free and open source under GPL-3.0-or-later. There is no account, subscription or telemetry."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does my voice leave my computer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Scoring runs locally with speech models downloaded once from Hugging Face. Recordings, history and settings stay in your app data folder. Network requests only happen for features you choose to use."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is the pronunciation score calculated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The final score out of 100 blends 30% acoustic similarity to a reference voice, 40% correct sounds (phoneme error rate) and 30% correct words (word error rate)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which platforms are supported?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "macOS on Apple Silicon, Windows x64, and Linux x64 as AppImage or .deb. Intel Macs are not supported."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much disk space and memory do I need?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "About 2.6 GB of disk space for the speech models plus the app itself. 8 GB of RAM is a practical starting point."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it work offline?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, after the models are installed. Practice and the game work offline. YouTube shadowing, word illustrations, updates and the optional AI agent need a network connection."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to start practising English pronunciation with Engclaw",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Download and install",
+          "text": "Pick the installer for your system: macOS Apple Silicon .dmg, Windows x64 .exe, or Linux AppImage or .deb."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Approve the model download",
+          "text": "On first use of a scoring feature, Engclaw lists each model's name, size and license and asks before downloading about 2.6 GB."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Read a sentence aloud",
+          "text": "Open Practice, record yourself, and see your score out of 100 with the sounds and words to fix."
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 
@@ -201,6 +318,26 @@
       </div>
     </section>
 
+    <!-- WHAT IS ENGCLAW (answer-first, quotable) -->
+    <section class="about" id="about" aria-labelledby="about-title">
+      <div class="wrap about__grid">
+        <div>
+          <p class="eyebrow">What is Engclaw?</p>
+          <h2 id="about-title">A free, open-source English pronunciation trainer that runs on your computer.</h2>
+          <p class="lead"><strong>Engclaw</strong> is a free, open-source desktop app for macOS, Windows and Linux that scores how you pronounce an English sentence, phone by phone, and shows which sounds, words and intonation to fix. It runs speech models locally, so there is no account, no server and no telemetry.</p>
+          <p class="about__updated">Last updated <time datetime="2026-11-12">12 November 2026</time></p>
+        </div>
+        <dl class="facts">
+          <div><dt>Type</dt><dd>Desktop app (Electron), open source</dd></div>
+          <div><dt>Price &amp; license</dt><dd>Free · GPL-3.0-or-later</dd></div>
+          <div><dt>Platforms</dt><dd>macOS (Apple Silicon), Windows x64, Linux x64</dd></div>
+          <div><dt>Scoring</dt><dd>30% acoustic similarity, 40% correct sounds, 30% correct words</dd></div>
+          <div><dt>Privacy</dt><dd>On-device; no account, no telemetry</dd></div>
+          <div><dt>Interface</dt><dd>English and Vietnamese</dd></div>
+        </dl>
+      </div>
+    </section>
+
     <!-- FEATURES -->
     <section class="showcase" id="features" aria-labelledby="features-title">
       <div class="showcase__stage">
@@ -275,6 +412,22 @@
           </div>
           <p>Fair warning: it’s a tough grader. A swallowed vowel is a wrong vowel, and one mumbled word still gets a red mark.</p>
         </div>
+
+        <div class="models">
+          <h3>Models Engclaw uses</h3>
+          <p>Downloaded once from Hugging Face on first use (with your consent), checksum-verified, and run locally at fp32 precision.</p>
+          <div class="table-wrap">
+            <table>
+              <caption class="sr-only">Speech models used by Engclaw</caption>
+              <thead><tr><th scope="col">Model</th><th scope="col">Used for</th><th scope="col">Size</th><th scope="col">License</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">wav2vec2-lv-60-espeak-cv-ft</th><td>Phone recognition: pronunciation and game</td><td>~1.26 GB</td><td>Apache-2.0</td></tr>
+                <tr><th scope="row">wav2vec2-large-960h</th><td>Speech recognition: free speaking and Converse</td><td>~1.26 GB</td><td>Apache-2.0</td></tr>
+                <tr><th scope="row">Kokoro-82M</th><td>Reference voice: “Hear it” and examples</td><td>~0.33 GB</td><td>Apache-2.0</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -310,10 +463,26 @@
       </div>
     </section>
 
+    <!-- GET STARTED -->
+    <section class="start" id="start" aria-labelledby="start-title">
+      <div class="wrap">
+        <h2 id="start-title">How to start practising in 3 steps</h2>
+        <ol class="start__list">
+          <li><h3>Download and install</h3><p>Pick the installer for your system: macOS Apple Silicon .dmg, Windows x64 .exe, or Linux AppImage / .deb.</p></li>
+          <li><h3>Approve the model download</h3><p>On first use of a scoring feature, Engclaw lists each model’s name, size and license and asks before downloading about 2.6 GB.</p></li>
+          <li><h3>Read a sentence aloud</h3><p>Open Practice, record yourself, and see your score out of 100 with the sounds and words to fix.</p></li>
+        </ol>
+      </div>
+    </section>
+
     <!-- FAQ -->
     <section class="faq" id="faq" aria-labelledby="faq-title">
       <div class="wrap faq__wrap">
         <h2 id="faq-title">Questions, answered.</h2>
+        <details><summary>What is Engclaw?</summary><p>Engclaw is a free, open-source desktop app for macOS, Windows and Linux that scores English pronunciation phone by phone and shows which sounds, words and intonation to fix. It runs speech models locally with no account, server or telemetry.</p></details>
+        <details><summary>Which AI models does Engclaw use?</summary><p>Three local models: wav2vec2-lv-60-espeak-cv-ft for phone recognition, wav2vec2-large-960h for speech recognition, and Kokoro-82M for the reference voice. All are Apache-2.0 licensed and downloaded once from Hugging Face.</p></details>
+        <details><summary>Can I practise with YouTube videos?</summary><p>Yes. Shadowing mode lets you paste a YouTube link, repeat each line of the transcript and get scored, or switch to dictation. Fetching YouTube captions and audio may be against YouTube's Terms of Service, so it is intended for personal, educational use.</p></details>
+        <details><summary>Does Engclaw support languages other than English?</summary><p>Pronunciation scoring is English only. The app interface is available in English and Vietnamese.</p></details>
         <details><summary>Is Engclaw really free?</summary><p>Yes. It is free and open source under GPL-3.0-or-later. No account, subscription or telemetry.</p></details>
         <details><summary>Does my voice leave my computer?</summary><p>No. Scoring runs locally. Recordings, history and settings stay in your app data folder. Network requests only happen for features you choose to use.</p></details>
         <details><summary>How is the score calculated?</summary><p>30% acoustic similarity to a reference voice, 40% correct sounds and 30% correct words.</p></details>
