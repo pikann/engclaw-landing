@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Engclaw – Free, Open-Source English Pronunciation Practice App</title>
+  <meta name="description" content="Engclaw is a free, open-source desktop app that scores your English pronunciation phone by phone. Practice, shadow YouTube videos and play the pronunciation game. 100% on-device, no account.">
+  <meta name="keywords" content="English pronunciation app, pronunciation practice, shadowing English, IPA, speech scoring, open source, offline, wav2vec2">
+  <meta name="author" content="Engclaw">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#007A7B">
+  <!-- TODO: replace with the final production URL -->
+  <link rel="canonical" href="https://pikann.github.io/engclaw/">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Engclaw">
+  <meta property="og:title" content="Engclaw – Free, Open-Source English Pronunciation Practice">
+  <meta property="og:description" content="Phone-by-phone pronunciation scoring that runs on your computer. Free, open source, no account, no telemetry.">
+  <meta property="og:url" content="https://pikann.github.io/engclaw/">
+  <meta property="og:image" content="https://pikann.github.io/engclaw/assets/icon.png">
+  <meta property="og:image:alt" content="Engclaw logo">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Engclaw – Free English Pronunciation Practice">
+  <meta name="twitter:description" content="Phone-by-phone pronunciation scoring that runs on your computer. Free and open source.">
+  <meta name="twitter:image" content="https://pikann.github.io/engclaw/assets/icon.png">
+
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preload" href="assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+
+  <script>document.documentElement.classList.add('js');setTimeout(function(){document.documentElement.classList.add('ready')},3000);</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Engclaw",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "macOS (Apple Silicon), Windows x64, Linux x64",
+        "description": "Open-source desktop app that scores English pronunciation phone by phone, with shadowing, a pronunciation game and a dictionary. Runs fully on your machine.",
+        "license": "https://www.gnu.org/licenses/gpl-3.0.html",
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "downloadUrl": "https://github.com/pikann/engclaw/releases/latest",
+        "codeRepository": "https://github.com/pikann/engclaw",
+        "inLanguage": ["en", "vi"]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is Engclaw really free?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Engclaw is free and open source under GPL-3.0-or-later. There is no account, subscription or telemetry." }
+          },
+          {
+            "@type": "Question",
+            "name": "Does my voice leave my computer?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. Scoring runs locally with speech models downloaded once from Hugging Face. Recordings, history and settings stay in your app data folder. Network requests only happen for features you choose to use." }
+          },
+          {
+            "@type": "Question",
+            "name": "How is the pronunciation score calculated?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The final score out of 100 blends 30% acoustic similarity to a reference voice, 40% correct sounds (phoneme error rate) and 30% correct words (word error rate)." }
+          },
+          {
+            "@type": "Question",
+            "name": "Which platforms are supported?",
+            "acceptedAnswer": { "@type": "Answer", "text": "macOS on Apple Silicon, Windows x64, and Linux x64 as AppImage or .deb. Intel Macs are not supported." }
+          },
+          {
+            "@type": "Question",
+            "name": "How much disk space and memory do I need?",
+            "acceptedAnswer": { "@type": "Answer", "text": "About 2.6 GB of disk space for the speech models plus the app itself. 8 GB of RAM is a practical starting point." }
+          },
+          {
+            "@type": "Question",
+            "name": "Does it work offline?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes, after the models are installed. Practice and the game work offline. YouTube shadowing, word illustrations, updates and the optional AI agent need a network connection." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav" id="nav">
+    <div class="wrap nav__inner">
+      <a class="brand" href="#top" aria-label="Engclaw home">
+        <img src="assets/icon.svg" width="36" height="36" alt="">
+        <span>Engclaw</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#features">Features</a>
+        <a href="#how">How it works</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="dl dl--small dl--right" data-dl>
+        <a class="btn dl__main" href="#download" data-dl-main><span data-dl-label>Download</span></a>
+        <button class="btn dl__toggle" type="button" aria-expanded="false" aria-label="Choose another platform" data-dl-toggle><svg viewBox="0 0 12 8" width="12" height="8" aria-hidden="true"><path d="M1 1.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <ul class="dl__menu" data-dl-menu hidden>
+          <li><a href="https://github.com/pikann/engclaw/releases/latest/download/Engclaw-macOS-arm64.dmg" data-os="mac" rel="noopener"><b>macOS</b><small>Apple Silicon · .dmg</small></a></li>
+          <li><a href="https://github.com/pikann/engclaw/releases/latest/download/Engclaw-Windows-x64.exe" data-os="windows" rel="noopener"><b>Windows</b><small>x64 · .exe</small></a></li>
+          <li><a href="https://github.com/pikann/engclaw/releases/latest/download/Engclaw-Linux-x64.AppImage" data-os="linux" rel="noopener"><b>Linux</b><small>x64 · AppImage</small></a></li>
+          <li><a href="https://github.com/pikann/engclaw/releases/latest/download/Engclaw-Linux-x64.deb" rel="noopener"><b>Linux</b><small>x64 · .deb</small></a></li>
+          <li class="dl__all"><a href="https://github.com/pikann/engclaw/releases/latest" rel="noopener">All releases &amp; checksums</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="wrap hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow" data-hero>Free · Open source · On-device</p>
+          <h1 class="hero__title">
+            <span class="line"><span class="line__in">Speak English</span></span>
+            <span class="line"><span class="line__in">like you <em>mean</em> it.</span></span>
+          </h1>
+          <p class="lead" data-hero>
+            Engclaw scores how you pronounce a sentence, phone by phone, and shows exactly which sounds to fix. No course fee. No account. It never sighs at your “th”.
+          </p>
+          <div class="cta" data-hero>
+            <div class="dl" data-dl>
+              <a class="btn dl__main" href="#download" data-dl-main><span data-dl-label>Download for free</span></a>
+              <button class="btn dl__toggle" type="button" aria-expanded="false" aria-label="Choose another platform" data-dl-toggle><svg viewBox="0 0 12 8" width="12" height="8" aria-hidden="true"><path d="M1 1.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+              <ul class="dl__menu" data-dl-menu hidden>
+                <li><a href="https://github.com/pikann/engclaw/releases/latest/download/Engclaw-macOS-arm64.dmg" data-os="mac" rel="noopener"><b>macOS</b><small>Apple Silicon · .dmg</small></a></li>
+                <li><a href="https://github.com/pikann/engclaw/releases/latest/download/Engclaw-Windows-x64.exe" data-os="windows" rel="noopener"><b>Windows</b><small>x64 · .exe</small></a></li>
+                <li><a href="https://github.com/pikann/engclaw/releases/latest/download/Engclaw-Linux-x64.AppImage" data-os="linux" rel="noopener"><b>Linux</b><small>x64 · AppImage</small></a></li>
+                <li><a href="https://github.com/pikann/engclaw/releases/latest/download/Engclaw-Linux-x64.deb" rel="noopener"><b>Linux</b><small>x64 · .deb</small></a></li>
+                <li class="dl__all"><a href="https://github.com/pikann/engclaw/releases/latest" rel="noopener">All releases &amp; checksums</a></li>
+              </ul>
+            </div>
+            <a class="btn btn--ghost" href="https://github.com/pikann/engclaw" rel="noopener">★ View on GitHub</a>
+          </div>
+          <ul class="chips" data-hero aria-label="Highlights">
+            <li>macOS</li><li>Windows</li><li>Linux</li><li>English &amp; Tiếng Việt</li>
+          </ul>
+        </div>
+
+        <div class="hero__visual" data-hero-visual>
+          <div class="window">
+            <div class="window__bar" aria-hidden="true"><i></i><i></i><i></i></div>
+            <video src="assets/media/practice.mp4" poster="assets/media/practice.jpg" width="880" height="586" autoplay muted loop playsinline preload="auto" aria-label="Engclaw Practice mode: the user reads a sentence aloud, gets a score and the mispronounced word is marked in red."></video>
+          </div>
+          <div class="float float--score" aria-hidden="true">
+            <svg viewBox="0 0 80 80" class="ring">
+              <circle cx="40" cy="40" r="34" class="ring__bg"/>
+              <circle cx="40" cy="40" r="34" class="ring__fg" id="heroRing"/>
+            </svg>
+            <div><strong id="heroScore">0</strong><small>/ 100</small></div>
+          </div>
+          <div class="float float--phone" aria-hidden="true"><span>/θ/</span> think</div>
+          <div class="float float--wave" aria-hidden="true">
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats" aria-label="Engclaw at a glance">
+      <div class="wrap stats__grid">
+        <div><strong data-count="3">0</strong><span>local AI models</span></div>
+        <div><strong data-count="5">0</strong><span>ways to practise</span></div>
+        <div><strong data-count="0">0</strong><span>accounts or trackers</span></div>
+        <div><strong data-count="100" data-suffix="%">0</strong><span>free &amp; open source</span></div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="showcase" id="features" aria-labelledby="features-title">
+      <div class="showcase__stage">
+        <div class="wrap showcase__grid">
+          <div class="showcase__text">
+            <p class="eyebrow">Everything in one app</p>
+            <h2 id="features-title">Five ways to fix your accent.</h2>
+            <ol class="tabs">
+              <li class="tab is-active" data-tab>
+                <h3>Practice</h3>
+                <p>Read a sentence aloud or speak freely. See which sounds, words and intonation to fix, with pitch curves against a reference voice.</p>
+              </li>
+              <li class="tab" data-tab>
+                <h3>Shadowing</h3>
+                <p>Paste a YouTube link, repeat each line, and get scored. Switch to dictation when you want to test your ears.</p>
+              </li>
+              <li class="tab" data-tab>
+                <h3>Pronunciation game</h3>
+                <p>Clear chapters one word at a time and collect stars. A try only counts at 50+ with no flagged word.</p>
+              </li>
+              <li class="tab" data-tab>
+                <h3>Dictionary</h3>
+                <p>IPA, roots and word families, plus an animated mouth and tongue for each sound. Study with flashcards.</p>
+              </li>
+              <li class="tab" data-tab>
+                <h3>Converse</h3>
+                <p>Optional AI speaking partner through a provider you configure. Say a sentence, get a spoken reply.</p>
+              </li>
+            </ol>
+          </div>
+          <div class="showcase__media">
+            <div class="window">
+              <div class="window__bar" aria-hidden="true"><i></i><i></i><i></i></div>
+              <div class="shots">
+                <video class="shot is-active" data-src="assets/media/practice.mp4" poster="assets/media/practice.jpg" width="880" height="586" muted loop playsinline preload="none" aria-label="Practice mode scoring a spoken sentence and marking the mispronounced word."></video>
+                <video class="shot" data-src="assets/media/shadowing.mp4" poster="assets/media/shadowing.jpg" width="880" height="586" muted loop playsinline preload="none" aria-label="Shadowing mode: paste a YouTube link, repeat a line and get a score."></video>
+                <video class="shot" data-src="assets/media/game.mp4" poster="assets/media/game.jpg" width="880" height="586" muted loop playsinline preload="none" aria-label="Pronunciation game: pick a chapter on the map and fill stars with clean tries."></video>
+                <video class="shot" data-src="assets/media/dictionary.mp4" poster="assets/media/dictionary.jpg" width="880" height="586" muted loop playsinline preload="none" aria-label="Dictionary: search a word and watch the mouth and tongue animate for each sound."></video>
+                <video class="shot" data-src="assets/media/converse.mp4" poster="assets/media/converse.jpg" width="880" height="586" muted loop playsinline preload="none" aria-label="Converse: speak a sentence and hear the AI agent reply."></video>
+              </div>
+            </div>
+            <div class="progress" aria-hidden="true"><i id="showcaseBar"></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="how" id="how" aria-labelledby="how-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Under the hood</p>
+          <h2 id="how-title">It listens to <em>sounds</em>, not guesses.</h2>
+          <p class="lead">Engclaw never asks a cloud service “does this sound OK?”. A stack of models on your computer compares what you said with what you should have said.</p>
+        </div>
+
+        <ol class="steps">
+          <li class="step"><span class="step__n">1</span><h3>Which sounds did you make?</h3><p>A wav2vec2 phone recogniser writes down the IPA phones it heard, with no idea what you meant.</p></li>
+          <li class="step"><span class="step__n">2</span><h3>Which should you have made?</h3><p>espeak-ng turns the target sentence into its expected phones.</p></li>
+          <li class="step"><span class="step__n">3</span><h3>Compare</h3><p>The sequences are aligned and every mismatch is marked, giving a phoneme error rate and a list of words to fix.</p></li>
+          <li class="step"><span class="step__n">4</span><h3>Which words did you say?</h3><p>A second model transcribes your speech for the word error rate. A different word is a different word.</p></li>
+          <li class="step"><span class="step__n">5</span><h3>Do you sound like it?</h3><p>Kokoro says the sentence; dynamic time warping compares frames, so slower or faster is fine but different sounds are not.</p></li>
+          <li class="step"><span class="step__n">6</span><h3>Intonation</h3><p>Pitch and energy curves are drawn for you and the reference.</p></li>
+        </ol>
+
+        <div class="blend" aria-label="Score formula">
+          <h3>Your score, out of 100</h3>
+          <div class="blend__bar" role="img" aria-label="30% acoustic similarity, 40% correct sounds, 30% correct words">
+            <span style="--w:30" class="b1"><b>30%</b> Acoustic</span>
+            <span style="--w:40" class="b2"><b>40%</b> Sounds</span>
+            <span style="--w:30" class="b3"><b>30%</b> Words</span>
+          </div>
+          <p>Fair warning: it’s a tough grader. A swallowed vowel is a wrong vowel, and one mumbled word still gets a red mark.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRIVACY -->
+    <section class="privacy" id="privacy" aria-labelledby="privacy-title">
+      <div class="wrap privacy__grid">
+        <div>
+          <p class="eyebrow eyebrow--light">Privacy by design</p>
+          <h2 id="privacy-title">Your voice stays on your machine.</h2>
+          <p class="lead lead--light">No server, no account, no telemetry. Models download once from Hugging Face, are checksum-verified, and run locally on CPU or WebGPU.</p>
+        </div>
+        <ul class="cards">
+          <li class="card"><h3>No accounts</h3><p>Open the app and start talking.</p></li>
+          <li class="card"><h3>Local storage</h3><p>Recordings, history and settings live in your app data folder.</p></li>
+          <li class="card"><h3>Network on request</h3><p>Only when you use YouTube, illustrations, updates or your own AI provider.</p></li>
+          <li class="card"><h3>Open source</h3><p>GPL-3.0 code you can read, audit and improve.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- REQUIREMENTS -->
+    <section class="reqs" aria-labelledby="reqs-title">
+      <div class="wrap">
+        <h2 id="reqs-title">Honest requirements</h2>
+        <dl class="reqs__grid">
+          <div><dt>macOS</dt><dd>Apple Silicon only</dd></div>
+          <div><dt>Windows</dt><dd>x64</dd></div>
+          <div><dt>Linux</dt><dd>x64 · AppImage or .deb</dd></div>
+          <div><dt>Disk</dt><dd>~2.6 GB for models</dd></div>
+          <div><dt>Memory</dt><dd>8 GB recommended</dd></div>
+          <div><dt>Language</dt><dd>English scoring · EN &amp; VI interface</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq" aria-labelledby="faq-title">
+      <div class="wrap faq__wrap">
+        <h2 id="faq-title">Questions, answered.</h2>
+        <details><summary>Is Engclaw really free?</summary><p>Yes. It is free and open source under GPL-3.0-or-later. No account, subscription or telemetry.</p></details>
+        <details><summary>Does my voice leave my computer?</summary><p>No. Scoring runs locally. Recordings, history and settings stay in your app data folder. Network requests only happen for features you choose to use.</p></details>
+        <details><summary>How is the score calculated?</summary><p>30% acoustic similarity to a reference voice, 40% correct sounds and 30% correct words.</p></details>
+        <details><summary>Which platforms are supported?</summary><p>macOS on Apple Silicon, Windows x64, and Linux x64 (AppImage or .deb). Intel Macs are not supported.</p></details>
+        <details><summary>How much space and memory do I need?</summary><p>About 2.6 GB of disk for the speech models plus the app. 8 GB of RAM is a practical starting point.</p></details>
+        <details><summary>Does it work offline?</summary><p>Yes, after the models are installed. Practice and the game work offline. YouTube, illustrations, updates and the AI agent need a connection.</p></details>
+      </div>
+    </section>
+
+    <!-- DOWNLOAD -->
+    <section class="download" id="download" aria-labelledby="download-title">
+      <div class="wrap download__inner">
+        <img class="download__logo" src="assets/icon.svg" width="96" height="96" alt="" loading="lazy">
+        <h2 id="download-title">Couldn’t afford a course? Neither could we.</h2>
+        <p class="lead lead--light">Download Engclaw and start fixing your accent today.</p>
+        <div class="cta cta--center">
+          <a class="btn btn--light" href="https://github.com/pikann/engclaw/releases/latest/download/Engclaw-macOS-arm64.dmg" rel="noopener">macOS (Apple Silicon)</a>
+          <a class="btn btn--light" href="https://github.com/pikann/engclaw/releases/latest/download/Engclaw-Windows-x64.exe" rel="noopener">Windows (x64)</a>
+          <a class="btn btn--light" href="https://github.com/pikann/engclaw/releases/latest/download/Engclaw-Linux-x64.AppImage" rel="noopener">Linux (AppImage)</a>
+        </div>
+        <p class="download__more"><a href="https://github.com/pikann/engclaw/releases/latest" rel="noopener">All releases &amp; checksums</a> · <a href="https://github.com/pikann/engclaw/releases/latest/download/Engclaw-Linux-x64.deb" rel="noopener">Linux .deb</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <a class="brand" href="#top"><img src="assets/icon.svg" width="28" height="28" alt=""><span>Engclaw</span></a>
+      <nav aria-label="Footer">
+        <a href="https://github.com/pikann/engclaw" rel="noopener">GitHub</a>
+        <a href="https://github.com/pikann/engclaw/discussions" rel="noopener">Discussions</a>
+        <a href="https://github.com/pikann/engclaw/issues" rel="noopener">Issues</a>
+        <a href="https://github.com/pikann/engclaw/blob/main/SECURITY.md" rel="noopener">Security</a>
+      </nav>
+      <p>© <span id="year">2026</span> Engclaw · GPL-3.0-or-later</p>
+    </div>
+  </footer>
+
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="js/download.js"></script>
+  <script defer src="js/media.js"></script>
+  <script defer src="js/main.js"></script>
+</body>
+</html>
